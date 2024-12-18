@@ -1,0 +1,103 @@
+{
+  "modulesContent": {
+    "$edgeAgent": {
+      "properties.desired": {
+        "schemaVersion": "1.1",
+        "runtime": {
+          "type": "docker",
+          "settings": {
+            "minDockerVersion": "v1.25",
+            "loggingOptions": "",
+            "registryCredentials": {
+              "user_cr": {
+                "username": "",
+                "password": "",
+                "address": "stiiotgwcr.azurecr.io"
+              }
+            }
+          }
+        },
+        "systemModules": {
+          "edgeAgent": {
+            "type": "docker",
+            "settings": {
+              "image": "mcr.microsoft.com/azureiotedge-agent:1.4",
+              "createOptions": "{}"
+            }
+          },
+          "edgeHub": {
+            "type": "docker",
+            "status": "running",
+            "restartPolicy": "always",
+            "settings": {
+              "image": "mcr.microsoft.com/azureiotedge-hub:1.4",
+              "createOptions": "{\"HostConfig\":{\"PortBindings\":{\"5671/tcp\":[{\"HostPort\":\"5671\"}],\"8883/tcp\":[{\"HostPort\":\"8883\"}],\"443/tcp\":[{\"HostPort\":\"443\"}]}}}"
+            }
+          }
+        },
+        "modules": {
+          "edgeSerial": {
+            "version": "1.5",
+            "type": "docker",
+            "status": "running",
+            "restartPolicy": "always",
+            "startupOrder": 1,
+            "env": {
+              "optimizeForPerformance": {
+                "value": false
+              },
+              "WORKSPACE_FOLDER": {
+                "value": "/app/workspace"
+              }
+            },
+            "settings": {
+              "image": "stiiotgwcr.azurecr.io/azureiotedge-serial:1.5-arm32v7",
+              "createOptions": "{\"HostConfig\":{\"Privileged\":true,\"Binds\":[\"/var/lib/iiotedgegw/workspace:/app/workspace\",\"/dev:/dev\"]}}"
+            }
+          },
+          "edgeIdentityTranslation": {
+            "version": "1.7",
+            "type": "docker",
+            "status": "running",
+            "restartPolicy": "always",
+            "startupOrder": 2,
+            "env": {
+              "optimizeForPerformance": {
+                "value": false
+              }
+            },
+            "settings": {
+              "image": "stiiotgwcr.azurecr.io/azureiotedge-identity-translation:1.7-arm32v7",
+              "createOptions": "{\"HostConfig\":{\"Privileged\":true,\"Binds\":[\"/etc/aziot:/app/aziot\"]}}"
+            }
+          },
+          "edgeIIoTGW": {
+            "version": "1.0",
+            "type": "docker",
+            "status": "running",
+            "restartPolicy": "always",
+            "startupOrder": 3,
+            "settings": {
+              "image": "stiiotgwcr.azurecr.io/azureiotedge-x-linux-igwwsn1-gwapp:1.0-arm32v7",
+              "createOptions": "{\"HostConfig\":{\"Privileged\":true,\"Binds\":[\"/run/shm/iiotgw/log:/app/log\",\"/var/lib/iiotedgegw/config:/app/config\"]}}"
+            }
+          }
+        }
+      }
+    },
+    "$edgeHub": {
+      "properties.desired": {
+        "schemaVersion": "1.2",
+        "routes": {
+          "SerialToIIoTGW": "FROM /messages/modules/edgeSerial/outputs/* INTO BrokeredEndpoint(\"/modules/edgeIIoTGW/inputs/data_input\")",
+          "IIoTGWToIoTHub": "FROM /messages/modules/edgeIIoTGW/outputs/iothub_output INTO $upstream",
+          "IIoTGWToIdentityTranslation": "FROM /messages/modules/edgeIIoTGW/outputs/identitytranslation_output INTO BrokeredEndpoint(\"/modules/edgeIdentityTranslation/inputs/data_input\")",
+          "IdentityTranslationToIoTHub": "FROM /messages/modules/edgeIdentityTranslation/outputs/* INTO $upstream"
+        },
+        "storeAndForwardConfiguration": {
+          "timeToLiveSecs": 7200
+        }
+      }
+    }
+  }
+}

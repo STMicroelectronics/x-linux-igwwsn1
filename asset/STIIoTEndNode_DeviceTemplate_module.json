@@ -1,0 +1,372 @@
+[
+  {
+    "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Name;1",
+        "@type": [
+          "Telemetry",
+          "StringValue"
+        ],
+        "displayName": {
+          "en": "Name"
+        },
+        "name": "Name",
+        "schema": "string"
+      },
+      {
+        "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Id;1",
+        "@type": [
+          "Telemetry",
+          "NumberValue"
+        ],
+        "displayName": {
+          "en": "Id"
+        },
+        "name": "Id",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:UID;1",
+        "@type": [
+          "Telemetry",
+          "StringValue"
+        ],
+        "displayName": {
+          "en": "UID"
+        },
+        "name": "UID",
+        "schema": "string"
+      },
+      {
+        "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Type;1",
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Type"
+        },
+        "name": "Type",
+        "schema": {
+          "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Type:schema;1",
+          "@type": "Enum",
+          "displayName": {
+            "en": "Enum"
+          },
+          "enumValues": [
+            {
+              "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Type:schema:Coordinator;1",
+              "displayName": {
+                "en": "Coordinator"
+              },
+              "enumValue": 0,
+              "name": "Coordinator"
+            },
+            {
+              "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Type:schema:Router;1",
+              "displayName": {
+                "en": "Router"
+              },
+              "enumValue": 1,
+              "name": "Router"
+            },
+            {
+              "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Type:schema:EndDevice;1",
+              "displayName": {
+                "en": "End Device"
+              },
+              "enumValue": 2,
+              "name": "EndDevice"
+            },
+            {
+              "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Type:schema:NotApplicable;1",
+              "displayName": {
+                "en": "Not Applicable"
+              },
+              "enumValue": -1,
+              "name": "NotApplicable"
+            }
+          ],
+          "valueSchema": "integer"
+        }
+      },
+      {
+        "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Epoch;1",
+        "@type": [
+          "Telemetry",
+          "NumberValue"
+        ],
+        "displayName": {
+          "en": "Epoch"
+        },
+        "name": "Epoch",
+        "schema": "long"
+      },
+      {
+        "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:State;1",
+        "@type": [
+          "Telemetry",
+          "NumberValue"
+        ],
+        "displayName": {
+          "en": "State"
+        },
+        "name": "State",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Address;1",
+        "@type": [
+          "Telemetry",
+          "StringValue"
+        ],
+        "comment": "Zigbee Address",
+        "description": {
+          "en": "Zigbee Address"
+        },
+        "displayName": {
+          "en": "Address"
+        },
+        "name": "Address",
+        "schema": "string",
+        "maxLength": 4,
+        "minLength": 0
+      },
+      {
+        "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Parent;1",
+        "@type": [
+          "Telemetry",
+          "StringValue"
+        ],
+        "comment": "Parent Zigbee Address",
+        "description": {
+          "en": "Parent Zigbee Address"
+        },
+        "displayName": {
+          "en": "Parent"
+        },
+        "name": "Parent",
+        "schema": "string",
+        "maxLength": 4,
+        "minLength": 0
+      },
+      {
+        "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:RSSI;1",
+        "@type": [
+          "Telemetry",
+          "NumberValue"
+        ],
+        "displayName": {
+          "en": "RSSI"
+        },
+        "name": "RSSI",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:LogFile;1",
+        "@type": [
+          "Telemetry",
+          "StringValue"
+        ],
+        "displayName": {
+          "en": "LogFile"
+        },
+        "name": "LogFile",
+        "schema": "string"
+      },
+      {
+        "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:PState;1",
+        "@type": [
+          "Telemetry",
+          "NumberValue"
+        ],
+        "displayName": {
+          "en": "PState"
+        },
+        "name": "PState",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Battery;1",
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Battery"
+        },
+        "name": "Battery",
+        "schema": {
+          "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Battery:schema;1",
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Battery:schema:Level;1",
+              "displayName": {
+                "en": "Level"
+              },
+              "name": "Level",
+              "schema": "integer"
+            },
+            {
+              "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Battery:schema:State;1",
+              "displayName": {
+                "en": "Battery State"
+              },
+              "name": "State",
+              "schema": {
+                "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Battery:schema:State:schema;1",
+                "@type": "Enum",
+                "displayName": {
+                  "en": "Enum"
+                },
+                "enumValues": [
+                  {
+                    "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Battery:schema:State:schema:LowBattery;1",
+                    "displayName": {
+                      "en": "Low Battery"
+                    },
+                    "enumValue": 0,
+                    "name": "LowBattery"
+                  },
+                  {
+                    "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Battery:schema:State:schema:Discharging;1",
+                    "displayName": {
+                      "en": "Discharging"
+                    },
+                    "enumValue": 1,
+                    "name": "Discharging"
+                  },
+                  {
+                    "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Battery:schema:State:schema:PluggedNotCharging;1",
+                    "displayName": {
+                      "en": "Plugged Not Charging"
+                    },
+                    "enumValue": 2,
+                    "name": "PluggedNotCharging"
+                  },
+                  {
+                    "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Battery:schema:State:schema:Charging;1",
+                    "displayName": {
+                      "en": "Charging"
+                    },
+                    "enumValue": 3,
+                    "name": "Charging"
+                  },
+                  {
+                    "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Battery:schema:State:schema:Unknown;1",
+                    "displayName": {
+                      "en": "Unknown"
+                    },
+                    "enumValue": 4,
+                    "name": "Unknown"
+                  },
+                  {
+                    "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Battery:schema:State:schema:NotAvailable;1",
+                    "displayName": {
+                      "en": "Not available"
+                    },
+                    "enumValue": 5,
+                    "name": "NotAvailable"
+                  },
+                  {
+                    "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Battery:schema:State:schema:NotApplication;1",
+                    "displayName": {
+                      "en": "Not Application"
+                    },
+                    "enumValue": -1,
+                    "name": "NotApplication"
+                  }
+                ],
+                "valueSchema": "integer"
+              }
+            },
+            {
+              "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Battery:schema:Voltage;1",
+              "displayName": {
+                "en": "Voltage"
+              },
+              "name": "Voltage",
+              "schema": "integer"
+            }
+          ]
+        }
+      },
+      {
+        "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:Temperature;1",
+        "@type": [
+          "Telemetry",
+          "NumberValue",
+          "Temperature"
+        ],
+        "displayName": {
+          "en": "Temperature"
+        },
+        "name": "Temperature",
+        "schema": "double",
+        "unit": "degreeCelsius",
+        "decimalPlaces": 1,
+        "displayUnit": {
+          "en": "°C"
+        }
+      },
+      {
+        "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:CbM;1",
+        "@type": "Telemetry",
+        "comment": "Processing data",
+        "displayName": {
+          "en": "Asset status"
+        },
+        "name": "CbM",
+        "schema": {
+          "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:CbM:schema;1",
+          "@type": "Enum",
+          "displayName": {
+            "en": "Enum"
+          },
+          "enumValues": [
+            {
+              "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:CbM:schema:NotApplicable;1",
+              "displayName": {
+                "en": "Not Applicable"
+              },
+              "enumValue": -1,
+              "name": "NotApplicable"
+            },
+            {
+              "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:CbM:schema:Good;1",
+              "displayName": {
+                "en": "Good"
+              },
+              "enumValue": 0,
+              "name": "Good"
+            },
+            {
+              "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:CbM:schema:Warning;1",
+              "displayName": {
+                "en": "Warning"
+              },
+              "enumValue": 1,
+              "name": "Warning"
+            },
+            {
+              "@id": "dtmi:IIoTEdgeGW:NodeDeviceTemplate_V100:CbM:schema:Alarm;1",
+              "displayName": {
+                "en": "Alarm"
+              },
+              "enumValue": 2,
+              "name": "Alarm"
+            }
+          ],
+          "valueSchema": "integer"
+        }
+      }
+    ],
+    "displayName": {
+      "en": "NodeDevice"
+    },
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ]
+  }
+]

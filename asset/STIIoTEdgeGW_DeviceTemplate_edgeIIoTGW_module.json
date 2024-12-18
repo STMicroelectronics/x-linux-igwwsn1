@@ -1,0 +1,158 @@
+[
+  {
+    "@id": "dtmi:IIoTEdgeGW_Interface:edgeIIoTGWb;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:IIoTEdgeGW_Interface:edgeIIoTGWb:Firmware;1",
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Firmware"
+        },
+        "name": "Firmware",
+        "schema": {
+          "@id": "dtmi:IIoTEdgeGW_Interface:edgeIIoTGWb:Firmware:schema;1",
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "@id": "dtmi:IIoTEdgeGW_Interface:edgeIIoTGWb:Firmware:schema:Name;1",
+              "displayName": {
+                "en": "Name"
+              },
+              "name": "Name",
+              "schema": "string"
+            },
+            {
+              "@id": "dtmi:IIoTEdgeGW_Interface:edgeIIoTGWb:Firmware:schema:Version;1",
+              "displayName": {
+                "en": "Version"
+              },
+              "name": "Version",
+              "schema": "string"
+            },
+            {
+              "@id": "dtmi:IIoTEdgeGW_Interface:edgeIIoTGWb:Firmware:schema:Date;1",
+              "displayName": {
+                "en": "Date"
+              },
+              "name": "Date",
+              "schema": "string"
+            }
+          ]
+        }
+      },
+      {
+        "@id": "dtmi:IIoTEdgeGW_Interface:edgeIIoTGWb:Clock;1",
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Clock"
+        },
+        "name": "Clock",
+        "schema": {
+          "@id": "dtmi:IIoTEdgeGW_Interface:edgeIIoTGWb:Clock:schema;1",
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "@id": "dtmi:IIoTEdgeGW_Interface:edgeIIoTGWb:Clock:schema:Date;1",
+              "displayName": {
+                "en": "Date"
+              },
+              "name": "Date",
+              "schema": "string"
+            },
+            {
+              "@id": "dtmi:IIoTEdgeGW_Interface:edgeIIoTGWb:Clock:schema:Time;1",
+              "displayName": {
+                "en": "Time"
+              },
+              "name": "Time",
+              "schema": "string"
+            }
+          ]
+        }
+      },
+      {
+        "@id": "dtmi:IIoTEdgeGW_Interface:edgeIIoTGWb:DeviceNumber;1",
+        "@type": [
+          "Telemetry",
+          "NumberValue"
+        ],
+        "displayName": {
+          "en": "Device number"
+        },
+        "name": "DeviceNumber",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:IIoTEdgeGW_Interface:edgeIIoTGWb:DeviceEvents;1",
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Device events"
+        },
+        "name": "DeviceEvents",
+        "schema": {
+          "@id": "dtmi:IIoTEdgeGW_Interface:edgeIIoTGWb:DeviceEvents:schema;1",
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "@id": "dtmi:IIoTEdgeGW_Interface:edgeIIoTGWb:DeviceEvents:schema:Epoch;1",
+              "displayName": {
+                "en": "Epoch"
+              },
+              "name": "Epoch",
+              "schema": "long"
+            },
+            {
+              "@id": "dtmi:IIoTEdgeGW_Interface:edgeIIoTGWb:DeviceEvents:schema:UID;1",
+              "displayName": {
+                "en": "UID"
+              },
+              "name": "UID",
+              "schema": "string"
+            },
+            {
+              "@id": "dtmi:IIoTEdgeGW_Interface:edgeIIoTGWb:DeviceEvents:schema:Address;1",
+              "displayName": {
+                "en": "Address"
+              },
+              "name": "Address",
+              "schema": "string"
+            },
+            {
+              "@id": "dtmi:IIoTEdgeGW_Interface:edgeIIoTGWb:DeviceEvents:schema:State;1",
+              "displayName": {
+                "en": "State"
+              },
+              "name": "State",
+              "schema": "integer"
+            },
+            {
+              "@id": "dtmi:IIoTEdgeGW_Interface:edgeIIoTGWb:DeviceEvents:schema:Text;1",
+              "displayName": {
+                "en": "Text"
+              },
+              "name": "Text",
+              "schema": "string"
+            }
+          ]
+        }
+      }
+    ],
+    "displayName": {
+      "en": "Module edgeIIoTGW"
+    },
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ]
+  }
+]

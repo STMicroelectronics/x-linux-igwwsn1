@@ -1,0 +1,17 @@
+{
+    "DataLogger": {
+      "Enable": true,
+      "Config" : {
+        "Path"       : "/app/log/",
+        "Prefix"     : "iiotgw_",
+        "Filenames"  : {
+          "LogNode"    : "node_<tag>.log",
+          "LogNetwork" : "network.log",
+          "LogApp"     : "app.log",
+          "LogRaw"     : "complete.log",
+          "LogSerial"  : "serial_<tag>.log"
+        },
+        "NetDeliveryFields": ["Name", "Id", "Type", "UID", "Status", "Addr", "Parent", "RSSI"]
+      }
+    }
+}

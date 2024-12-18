@@ -1,0 +1,14 @@
+{
+  "EdgeGateway": {
+    "IdScope": "<id_scope_iiotedgegw>",
+    "DeviceTemplateId": "STIIoTEdgeGW",
+    "PrimaryKey": "<primary_key_iiotedgegw>"
+  },
+  "Nodes": {
+    "NODE0001" : {"S":"01", "Name": "NodeA",       "Provisioning" : {"device_id": "Node1",  "primary_key": "<primary_key_node1>", "device_physical_id": "DP01", "id_scope": "<id_scope_node1>", "device_template_id": "STIIoTNodeDevice"}},
+    "NODE0002" : {"S":"02", "Name": "NodeB",       "Provisioning" : {"device_id": "Node2",  "primary_key": "<primary_key_node2>", "device_physical_id": "DP02", "id_scope": "<id_scope_node2>", "device_template_id": "STIIoTNodeDevice"}},
+    "NODE0003" : {"S":"03", "Name": "NodeC",       "Provisioning" : {"device_id": "Node3",  "primary_key": "<primary_key_node3>", "device_physical_id": "DP03", "id_scope": "<id_scope_node3>", "device_template_id": "STIIoTNodeDevice"}},
+    "NODE0004" : {"S":"04", "Name": "NodeD",       "Provisioning" : {"device_id": "Node4",  "primary_key": "<primary_key_node4>", "device_physical_id": "DP04", "id_scope": "<id_scope_node4>", "device_template_id": "STIIoTNodeDevice"}},
+    "00000000" : {"S":"00", "Name": "Coordinator", "Provisioning" : {}}
+  }
+}

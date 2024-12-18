@@ -1,0 +1,297 @@
+[
+  {
+    "@id": "dtmi:IIoTEdgeGW_Interface:edgeSerial;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:IIoTEdgeGW_Interface:edgeSerial:edge_serial_relationship;1",
+        "@type": [
+          "Relationship",
+          "GatewayDevice"
+        ],
+        "displayName": {
+          "en": "Edge Serial Relationship"
+        },
+        "name": "edge_serial_relationship",
+        "target": []
+      }
+    ],
+    "displayName": {
+      "en": "Module edgeSerial"
+    },
+    "extends": [
+      "dtmi:cbmWeb:gateway:service:interfaces:serial;1"
+    ],
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ]
+  },
+  {
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ],
+    "@id": "dtmi:cbmWeb:gateway:service:interfaces:serial;1",
+    "@type": [
+      "Interface",
+      "NamedInterface"
+    ],
+    "contents": [
+      {
+        "@id": "dtmi:cbmWeb:gateway:service:interfaces:serial:list;1",
+        "@type": "Command",
+        "commandType": "synchronous",
+        "displayName": {
+          "en": "List"
+        },
+        "name": "list",
+        "response": {
+          "@type": "CommandPayload",
+          "displayName": {
+            "en": "Arguments"
+          },
+          "name": "arguments",
+          "schema": {
+            "@type": "Object",
+            "displayName": {
+              "en": "Object"
+            },
+            "fields": [
+              {
+                "displayName": {
+                  "en": "List of devices"
+                },
+                "name": "list_of_devices",
+                "schema": "vector"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "@id": "dtmi:cbmWeb:gateway:service:interfaces:serial:connect;1",
+        "@type": "Command",
+        "commandType": "synchronous",
+        "displayName": {
+          "en": "Connect"
+        },
+        "name": "connect",
+        "request": {
+          "@type": "CommandPayload",
+          "displayName": {
+            "en": "Arguments"
+          },
+          "name": "arguments",
+          "schema": {
+            "@type": "Object",
+            "displayName": {
+              "en": "Object"
+            },
+            "fields": [
+              {
+                "displayName": {
+                  "en": "Device Serial Port"
+                },
+                "name": "device_serial_port",
+                "schema": "string"
+              },
+              {
+                "displayName": {
+                  "en": "Transmit Delay Milliseconds"
+                },
+                "name": "transmit_delay_milliseconds",
+                "schema": "integer"
+              }
+            ]
+          }
+        },
+        "response": {
+          "@type": "CommandPayload",
+          "displayName": {
+            "en": "Arguments"
+          },
+          "name": "arguments",
+          "schema": {
+            "@type": "Object",
+            "displayName": {
+              "en": "Object"
+            },
+            "fields": [
+              {
+                "displayName": {
+                  "en": "Connected"
+                },
+                "name": "connected",
+                "schema": "boolean"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "@id": "dtmi:cbmWeb:gateway:service:interfaces:serial:disconnect;1",
+        "@type": "Command",
+        "commandType": "synchronous",
+        "displayName": {
+          "en": "Disconnect"
+        },
+        "name": "disconnect",
+        "request": {
+          "@type": "CommandPayload",
+          "displayName": {
+            "en": "Arguments"
+          },
+          "name": "arguments",
+          "schema": {
+            "@type": "Object",
+            "displayName": {
+              "en": "Object"
+            },
+            "fields": [
+              {
+                "displayName": {
+                  "en": "Device Serial Port"
+                },
+                "name": "device_serial_port",
+                "schema": "string"
+              }
+            ]
+          }
+        },
+        "response": {
+          "@type": "CommandPayload",
+          "displayName": {
+            "en": "Arguments"
+          },
+          "name": "arguments",
+          "schema": {
+            "@type": "Object",
+            "displayName": {
+              "en": "Object"
+            },
+            "fields": [
+              {
+                "displayName": {
+                  "en": "Connected"
+                },
+                "name": "connected",
+                "schema": "boolean"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "@id": "dtmi:cbmWeb:gateway:service:interfaces:serial:start;1",
+        "@type": "Command",
+        "commandType": "synchronous",
+        "displayName": {
+          "en": "Start"
+        },
+        "name": "start",
+        "request": {
+          "@type": "CommandPayload",
+          "displayName": {
+            "en": "Arguments"
+          },
+          "name": "arguments",
+          "schema": {
+            "@type": "Object",
+            "displayName": {
+              "en": "Object"
+            },
+            "fields": [
+              {
+                "displayName": {
+                  "en": "Device Serial Port"
+                },
+                "name": "device_serial_port",
+                "schema": "string"
+              }
+            ]
+          }
+        },
+        "response": {
+          "@type": "CommandPayload",
+          "displayName": {
+            "en": "Arguments"
+          },
+          "name": "arguments",
+          "schema": {
+            "@type": "Object",
+            "displayName": {
+              "en": "Object"
+            },
+            "fields": [
+              {
+                "displayName": {
+                  "en": "Started"
+                },
+                "name": "started",
+                "schema": "boolean"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "@id": "dtmi:cbmWeb:gateway:service:interfaces:serial:stop;1",
+        "@type": "Command",
+        "commandType": "synchronous",
+        "displayName": {
+          "en": "Stop"
+        },
+        "name": "stop",
+        "request": {
+          "@type": "CommandPayload",
+          "displayName": {
+            "en": "Arguments"
+          },
+          "name": "arguments",
+          "schema": {
+            "@type": "Object",
+            "displayName": {
+              "en": "Object"
+            },
+            "fields": [
+              {
+                "displayName": {
+                  "en": "Device Serial Port"
+                },
+                "name": "device_serial_port",
+                "schema": "string"
+              }
+            ]
+          }
+        },
+        "response": {
+          "@type": "CommandPayload",
+          "displayName": {
+            "en": "Arguments"
+          },
+          "name": "arguments",
+          "schema": {
+            "@type": "Object",
+            "displayName": {
+              "en": "Object"
+            },
+            "fields": [
+              {
+                "displayName": {
+                  "en": "Stopped"
+                },
+                "name": "stopped",
+                "schema": "boolean"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "displayName": {
+      "en": "Serial"
+    },
+    "name": "IIoTEdgeGW_Serial"
+  }
+]
