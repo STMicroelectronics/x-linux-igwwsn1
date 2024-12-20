@@ -1,6 +1,6 @@
 # X-LINUX-IGWWSN1 V1.0.0
 
-![latest tag](https://img.shields.io/github/v/tag/STMicroelectronics/x-linux-igwwsn.svg?color=brightgreen)
+![latest tag](https://img.shields.io/github/v/tag/STMicroelectronics/x-linux-igwwsn1.svg?color=brightgreen)
 
 ## Introduction
 **X-LINUX-IGWWSN1** is an industrial edge gateway software package for wireless sensor networks (WSN). It allows you to connect sensor nodes, such as the **STEVAL-PROTEUS1** kit, to **Microsoft Azure® IoT Central** cloud, transmit
