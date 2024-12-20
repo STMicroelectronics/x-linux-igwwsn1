@@ -1,7 +1,6 @@
-# X-LINUX_IGWWSN1_V1.0.0
+# X-LINUX-IGWWSN1 V1.0.0
 
-==============================================================================================================
-# X-LINUX-IGWWSN1 V1.0.0 Linux Package
+![latest tag](https://img.shields.io/github/v/tag/STMicroelectronics/x-linux-igwwsn.svg?color=brightgreen)
 
 ## Introduction
 **X-LINUX-IGWWSN1** is an industrial edge gateway software package for wireless sensor networks (WSN). It allows you to connect sensor nodes, such as the **STEVAL-PROTEUS1** kit, to **Microsoft Azure® IoT Central** cloud, transmit
@@ -118,7 +117,7 @@ folder:
 - Configure the _config_net.json_ json file available in the _/var/lib/iiotedgegw/config/_ folder  config_app.json and 
 
 #### Apply the configuration in the STM32MPU Board
-- execç iotedge config apply
+- exec: iotedge config apply
 
 Note: 
 - The Node UID is the last 4 bytes of the MCU id.
